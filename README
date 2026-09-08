@@ -1,0 +1,129 @@
+# RAG Chatbot
+
+A Retrieval-Augmented Generation (RAG) chatbot that answers questions using information retrieved from a custom document knowledge base.
+
+## Features
+
+* Retrieval-Augmented Generation (RAG)
+* Document ingestion and processing
+* Semantic search using vector embeddings
+* Pinecone vector database for document retrieval
+* LLM-powered responses
+* FastAPI backend
+* Responsive HTML/CSS/JavaScript frontend
+* Environment variable configuration for API keys
+
+## Project Structure
+
+```text
+rag-chatbot/
+├── backend/
+│   ├── main.py
+│   ├── config.py
+│   ├── ingest.py
+│   ├── requirements.txt
+│   ├── .env.example
+│   ├── models/
+│   ├── services/
+│   └── data/
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── .gitignore
+├── README.md
+└── LICENSE
+```
+
+## How It Works
+
+The chatbot follows a RAG pipeline:
+
+1. Documents are loaded from the knowledge base.
+2. Documents are processed and converted into embeddings.
+3. Embeddings are stored in Pinecone.
+4. When a user asks a question, relevant documents are retrieved.
+5. The retrieved information is provided to the LLM as context.
+6. The LLM generates a relevant response based on the retrieved information.
+
+## Technologies Used
+
+* Python
+* FastAPI
+* LangChain
+* Pinecone
+* Large Language Model (LLM)
+* HTML
+* CSS
+* JavaScript
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/abdullahxai01/rag-chatbot.git
+cd rag-chatbot
+```
+
+Create and activate a virtual environment:
+
+### Windows
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+Install the required dependencies:
+
+```powershell
+pip install -r backend/requirements.txt
+```
+
+## Environment Variables
+
+Create a `.env` file inside the `backend` directory and add the required API keys and configuration values.
+
+Use `.env.example` as a template.
+
+**Do not upload your `.env` file or API keys to GitHub.**
+
+## Running the Backend
+
+From the project root:
+
+```powershell
+uvicorn backend.main:app --reload
+```
+
+The API will be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Frontend
+
+Open:
+
+```text
+frontend/index.html
+```
+
+in your browser, or serve the frontend using a local development server.
+
+## Future Improvements
+
+* User authentication
+* Conversation history
+* Support for multiple document formats
+* Improved retrieval and ranking
+* Streaming LLM responses
+* Cloud deployment
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
